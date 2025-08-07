@@ -111,20 +111,3 @@ document.addEventListener("DOMContentLoaded", function () {
     const feedbackForm = document.querySelector("#feedbackForm");
     if (feedbackForm) {handleFormSubmission(feedbackForm, "Thank you for your feedback! We will look through it shortly and get back to you.");}
 });
-
-document.addEventListener('DOMContentLoaded', function() {
-        const eventModal = document.getElementById('eventModal');
-        if (eventModal) {
-            eventModal.addEventListener('show.bs.modal', function(event) {
-                const button = event.relatedTarget;
-                const title = button.getAttribute('data-title');
-                const imgSrc = button.getAttribute('data-img');
-                const description = button.getAttribute('data-desc');
-                
-                document.getElementById('modalEventTitle').textContent = title;
-                document.getElementById('modalEventImage').setAttribute('src', imgSrc);
-                document.getElementById('modalEventImage').setAttribute('alt', title);
-                document.getElementById('modalEventDesc').textContent = description;
-            });
-        }
-    });

@@ -56,31 +56,69 @@ window.addEventListener('DOMContentLoaded', event => {
 
 // our own js code 
 
-// Show the fullscreen loader
+// Loader
 function showLoader() {
   document.getElementById('fullscreen-loader').style.display = 'flex';
-  document.body.style.overflow = 'hidden'; // Prevent scrolling
+  document.body.style.overflow = 'hidden';
 }
 
-// Hide the fullscreen loader
 function hideLoader() {
   const loader = document.getElementById('fullscreen-loader');
   loader.style.opacity = '0';
   setTimeout(() => {
     loader.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Re-enable scrolling
+    document.body.style.overflow = 'auto';
+    
+    // Initialize ScrollSpy & Navbar AFTER Loader Hides
+    initNavbar();
   }, 500);
 }
 
-// Automatically hide loader when page finishes loading
-window.addEventListener('load', function() {
-  setTimeout(hideLoader, 1000); 
-});
+// Delayed Initialization
+function initNavbar() {
+  // Shrink navbar on scroll
+  const navbarShrink = () => {
+    const navbarCollapsible = document.body.querySelector('#mainNav');
+    if (!navbarCollapsible) return;
+    navbarCollapsible.classList.toggle('navbar-shrink', window.scrollY !== 0);
+  };
+  navbarShrink();
+  document.addEventListener('scroll', navbarShrink);
 
-// Show loader immediately when page starts loading
-document.addEventListener('DOMContentLoaded', function() {
-  showLoader();
-});
+  // Initialize ScrollSpy (with manual active state control)
+  const mainNav = document.body.querySelector('#mainNav');
+  if (mainNav) {
+    new bootstrap.ScrollSpy(document.body, {
+      target: '#mainNav',
+      rootMargin: '0px 0px -40%',
+    });
+
+    // Manually handle active states for dropdown items
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+      item.addEventListener('click', () => {
+        // Remove active class from all dropdown items
+        document.querySelectorAll('.dropdown-item').forEach(el => el.classList.remove('active'));
+        // Add active class to clicked item
+        item.classList.add('active');
+      });
+    });
+  }
+
+  // Close responsive navbar when clicking a link
+  const navbarToggler = document.body.querySelector('.navbar-toggler');
+  const responsiveNavItems = document.querySelectorAll('#navbarResponsive .nav-link');
+  responsiveNavItems.forEach(item => {
+    item.addEventListener('click', () => {
+      if (window.getComputedStyle(navbarToggler).display !== 'none') {
+        navbarToggler.click();
+      }
+    });
+  });
+}
+
+// ===== Loader Event Listeners =====
+document.addEventListener('DOMContentLoaded', showLoader);
+window.addEventListener('load', () => setTimeout(hideLoader, 1000));
 
 // form
 function handleFormSubmission(form, message) {

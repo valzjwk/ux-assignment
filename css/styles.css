@@ -13334,10 +13334,3 @@ body {
   color: #dc3545;
 }
 
-/* Navbar link styling */
-.navbar-nav .nav-link {
-    position: relative;
-    padding: 0.5rem 1rem;
-    color: var(--bs-navbar-nav-link-color);
-    transition: all 0.3s ease;
-}

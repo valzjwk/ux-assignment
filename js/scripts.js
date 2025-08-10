@@ -116,36 +116,76 @@ function initNavbar() {
   });
 }
 
-// ===== Loader Event Listeners =====
+// Loader Event Listeners
 document.addEventListener('DOMContentLoaded', showLoader);
 window.addEventListener('load', () => setTimeout(hideLoader, 1000));
 
-// form
+// For switching between forms
+const formTypeSelect = document.getElementById('formTypeSelect');
+const signupSection = document.getElementById('signup');
+const alumniSection = document.getElementById('join');
+const feedbackSection = document.getElementById('feedback');
+
+function showForm(formId) {
+    const forms = [signupSection, alumniSection, feedbackSection];
+    forms.forEach(section => {
+        if (section) {
+            const isVisible = section.id === formIdToId(formId);
+            section.style.display = isVisible ? 'block' : 'none';
+
+            // Disable required fields in hidden forms
+            section.querySelectorAll('[required]').forEach(input => {
+                input.disabled = !isVisible;
+            });
+        }
+    });
+}
+
+function formIdToId(value) {
+    if (value === 'joinUs') return 'signup';
+    if (value === 'alumni') return 'join';
+    if (value === 'feedback') return 'feedback';
+}
+
+if (formTypeSelect) {
+    showForm(formTypeSelect.value);
+
+    formTypeSelect.addEventListener('change', (e) => {
+        showForm(e.target.value);
+    });
+}
+
+// Form submission handling with validation and alert
 function handleFormSubmission(form, message) {
-      form.addEventListener("submit", function (event) {
-          event.preventDefault(); // stop default
+    if (!form) return;
 
-          if (!form.checkValidity()) {
-              form.reportValidity(); // show browser messages
-              return;
-          }
+    form.addEventListener("submit", function (event) {
+        if (!form.checkValidity()) {
+            event.preventDefault(); // Stop form submission
+            form.reportValidity();
 
-          alert(message);
-          form.reset();
-      });
-  }
+            // Focus the first invalid element for convenience
+            const firstInvalid = form.querySelector(":invalid");
+            if (firstInvalid) {
+                firstInvalid.focus({
+                    preventScroll: false
+                });
+            }
+            return;
+        }
 
-document.addEventListener("DOMContentLoaded", function () {
-    const joinUsForm = document.querySelector("#joinUsForm");
-    if (joinUsForm) {handleFormSubmission(joinUsForm, "Thank you for signing up with NYP SO! We will contact you shortly, we are excited to have you on board!");}
-});
+        event.preventDefault(); // valid form, prevent actual submission
+        alert(message);
+        form.reset();
+    });
+}
 
-document.addEventListener("DOMContentLoaded", function () {
-    const alumniForm = document.querySelector("#alumniForm");
-    if (alumniForm) {handleFormSubmission(alumniForm, "Thank you for signing up with NYP Alumni Association! We will contact you shortly.");}
-});
+// Attach handlers to each form if exists
+const joinUsForm = document.querySelector("#joinUsForm");
+if (joinUsForm) handleFormSubmission(joinUsForm, "Thank you for signing up with NYP SO! We will contact you shortly, we are excited to have you on board!");
 
-document.addEventListener("DOMContentLoaded", function () {
-    const feedbackForm = document.querySelector("#feedbackForm");
-    if (feedbackForm) {handleFormSubmission(feedbackForm, "Thank you for your feedback! We will look through it shortly and get back to you.");}
-});
+const alumniForm = document.querySelector("#alumniForm");
+if (alumniForm) handleFormSubmission(alumniForm, "Thank you for signing up with NYP Alumni Association! We will contact you shortly.");
+
+const feedbackForm = document.querySelector("#feedbackForm");
+if (feedbackForm) handleFormSubmission(feedbackForm, "Thank you for your feedback! We will look through it shortly and get back to you.");

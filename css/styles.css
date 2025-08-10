@@ -4333,7 +4333,6 @@ fieldset:disabled .btn {
   --bs-navbar-color: rgba(0, 0, 0, 0.75);
   --bs-navbar-hover-color: #D4AF37;
   --bs-navbar-disabled-color: rgba(0, 0, 0, 0.3);
-  --bs-navbar-active-color: #D4AF37;
   --bs-navbar-brand-padding-y: 0.3125rem;
   --bs-navbar-brand-margin-end: 1rem;
   --bs-navbar-brand-font-size: 1.25rem;
@@ -13278,6 +13277,7 @@ body {
 
 #aa,
 #join,
+#feedback,
 #signup {
   background: linear-gradient(135deg, #f5f7fa, #e4ecf3);
 }
@@ -13334,3 +13334,11 @@ body {
   color: #dc3545;
 }
 
+body.loader-active {
+    overflow: hidden !important;
+}
+
+body:not(.loader-active) #mainNav {
+    /* Ensure navbar works after loader */
+    visibility: visible !important;
+}

@@ -82,20 +82,13 @@
                         <ul class="dropdown-menu" aria-labelledby="alumniDropdown">
                             <li><a class="dropdown-item" href="alumni.html#aa">Alumni Association</a></li>
                             <li><a class="dropdown-item" href="alumni.html#events">Events</a></li>
-                            <li><a class="dropdown-item" href="alumni.html#join">Join Us!</a></li>
                         </ul>
                     </li>
 
                     <!-- Contact -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#page-top">
-                            Contact Us
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="contactDropdown">
-                            <li><a class="dropdown-item" href="contact.html#signup">Sign Up Form</a></li>
-                            <li><a class="dropdown-item" href="contact.html#feedback">Feedback Form</a></li>
-                        </ul>
-                    </li>
+                    <a class="nav-link" href="contact.html">
+                        Contact Us
+                    </a>
                 </ul>
             </div>
         </div>
@@ -104,62 +97,75 @@
     <header class="page-header bg-dark text-white py-6" id="instruments">
         <div class="container text-center">
             <h1 class="display-4 fw-bold">Contact Us</h1>
-            <p class="lead text-muted">Questions or feedback, drop us an email!</p>
+            <p class="lead text-muted">Interested to join us or have questions? Fill up the form below!</p>
         </div>
     </header>
 
-    <!--Current students Join Us-->
+    <!--Form type-->
+    <section class="text-center pt-5" id="formSelector">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-6">
+                    <h4>Select Form Type</h4>
+                    <select id="formTypeSelect" class="form-select mb-4" aria-label="Select form type">
+                        <option value="joinUs" selected>Current Students: Join NYP SO!</option>
+                        <option value="alumni">Alumni: Join NYP SO Alumni Association</option>
+                        <option value="feedback">Feedback Form</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us Form -->
     <section class="text-center pt-5 pb-5" id="signup">
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8">
-                    <h4>Interested to join us?</h4>
-                    <h6 class="mt-2 mb-4">Fill out the form below with your details and we'll contact you!</h6>
-
                     <form id="joinUsForm" class="text-start">
                         <!--Name-->
                         <div class="mb-3">
-                            <label for="joinUsName" class="form-label required">Name  </label>
+                            <label for="joinUsName" class="form-label required">Name</label>
                             <input class="form-control" id="joinUsName" name="joinUsName" type="text" required
-                                placeholder="Enter your full name">
+                                placeholder="Enter your full name" />
                         </div>
 
                         <!--Admin Number-->
                         <div class="mb-3">
-                            <label for="adminNum" class="form-label required">Admin Number  </label>
+                            <label for="adminNum" class="form-label required">Admin Number</label>
                             <input class="form-control" id="adminNum" name="adminNum" type="text" required
-                                placeholder="e.g. 123456A">
+                                placeholder="e.g. 123456A" />
                         </div>
 
                         <!--School Email-->
                         <div class="mb-3">
-                            <label for="schEmail" class="form-label required">School Email  </label>
+                            <label for="schEmail" class="form-label required">School Email</label>
                             <input type="email" class="form-control" id="schEmail" name="schEmail"
-                                placeholder="123456A@nyp.edu.sg" required>
+                                placeholder="adminNum@mymail.nyp.edu.sg" required />
                         </div>
 
                         <!--Year of Study-->
                         <div class="mb-3">
-                            <label class="form-label d-block required">Year of Study  </label>
+                            <label class="form-label d-block required">Year of Study</label>
                             <div class="row row-cols-2 row-cols-sm-3 g-2">
                                 <div class="form-check col">
-                                    <input class="form-check-input" type="radio" name="yearOfStudy" id="PFP"
-                                        value="PFP" required>
+                                    <input class="form-check-input" type="radio" name="yearOfStudy" id="PFP" value="PFP"
+                                        required />
                                     <label class="form-check-label" for="PFP">PFP</label>
                                 </div>
-                                <div clas s="form-check col">
+                                <div class="form-check col">
                                     <input class="form-check-input" type="radio" name="yearOfStudy" id="Year1"
-                                        value="Year 1" required>
+                                        value="Year 1" required />
                                     <label class="form-check-label" for="Year1">Year 1</label>
                                 </div>
                                 <div class="form-check col">
                                     <input class="form-check-input" type="radio" name="yearOfStudy" id="Year2"
-                                        value="Year 2" required>
+                                        value="Year 2" required />
                                     <label class="form-check-label" for="Year2">Year 2</label>
                                 </div>
                                 <div class="form-check col">
                                     <input class="form-check-input" type="radio" name="yearOfStudy" id="Year3"
-                                        value="Year 3" required>
+                                        value="Year 3" required />
                                     <label class="form-check-label" for="Year3">Year 3</label>
                                 </div>
                             </div>
@@ -167,42 +173,167 @@
 
                         <!--Experience in which instrument-->
                         <div class="mb-3">
-                            <label class="form-label d-block required">Experience in which instrument?  </label>
+                            <label class="form-label d-block required">Experience in which instrument?</label>
                             <div class="row row-cols-2 row-cols-sm-3 g-2">
                                 <div class="form-check col">
                                     <input class="form-check-input" type="radio" name="joinUsInstrument"
-                                        id="joinUsWoodwinds" value="woodwinds" required>
+                                        id="joinUsWoodwinds" value="woodwinds" required />
                                     <label class="form-check-label" for="joinUsWoodwinds">Woodwinds</label>
                                 </div>
                                 <div class="form-check col">
                                     <input class="form-check-input" type="radio" name="joinUsInstrument"
-                                        id="joinUsBrass" value="brass" required>
+                                        id="joinUsBrass" value="brass" required />
                                     <label class="form-check-label" for="joinUsBrass">Brass</label>
                                 </div>
                                 <div class="form-check col">
                                     <input class="form-check-input" type="radio" name="joinUsInstrument"
-                                        id="joinUsStrings" value="strings" required>
+                                        id="joinUsStrings" value="strings" required />
                                     <label class="form-check-label" for="joinUsStrings">Strings</label>
                                 </div>
                                 <div class="form-check col">
                                     <input class="form-check-input" type="radio" name="joinUsInstrument"
-                                        id="joinUsPercussion" value="percussion" required>
+                                        id="joinUsPercussion" value="percussion" required />
                                     <label class="form-check-label" for="joinUsPercussion">Percussion</label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" type="radio" name="joinUsNoExp"
+                                        id="joinUsNoExp" value="noExp" required />
+                                    <label class="form-check-label" for="joinUsNoExp">No Experience</label>
                                 </div>
                             </div>
                         </div>
 
                         <!--Joining CCA-->
                         <div class="form-check mb-4">
-                            <input class="form-check-input" type="checkbox" value="" id="checkDefault" required>
+                            <input class="form-check-input" type="checkbox" value="" id="checkDefault" required />
                             <label class="form-check-label required" for="checkDefault">
                                 I acknowledge that by submitting this form, I am signing up to join this CCA as a
-                                member.  
+                                member.
                             </label>
                         </div>
 
                         <!--Submit button-->
                         <div class="d-flex justify-content-center my-2 mt-5">
+                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                        </div>
+
+                        <!--Thank you message-->
+                        <h6 class="text-center" style="display: none;">
+                            Thank you for filling in the form. We will get back to you shortly!
+                        </h6>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alumni Join Us Form -->
+    <section class="projects-section text-center pt-5 pb-5" id="join" style="display: none;">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8">
+                    <form id="alumniForm" class="text-start">
+                        <!--Salutation-->
+                        <div class="mb-3">
+                            <label class="form-label d-block required">Salutation </label>
+                            <div class="row row-cols-2 row-cols-sm-3 g-2">
+                                <div class="form-check col">
+                                    <input class="form-check-input" type="radio" name="salutation" id="miss"
+                                        value="Miss" required />
+                                    <label class="form-check-label" for="miss">Miss</label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" type="radio" name="salutation" id="ms" value="Ms"
+                                        required />
+                                    <label class="form-check-label" for="ms">Ms</label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" type="radio" name="salutation" id="mrs" value="Mrs"
+                                        required />
+                                    <label class="form-check-label" for="mrs">Mrs</label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" type="radio" name="salutation" id="mdm" value="Mdm"
+                                        required />
+                                    <label class="form-check-label" for="mdm">Mdm</label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" type="radio" name="salutation" id="mr" value="Mr"
+                                        required />
+                                    <label class="form-check-label" for="mr">Mr</label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" type="radio" name="salutation" id="dr" value="Dr"
+                                        required />
+                                    <label class="form-check-label" for="dr">Dr</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Name-->
+                        <div class="mb-3">
+                            <label for="alumniName" class="form-label required">Name</label>
+                            <input class="form-control" id="alumniName" name="AlumniName" type="text"
+                                placeholder="Enter your full name" required />
+                        </div>
+
+                        <!--Email Address-->
+                        <div class="mb-3">
+                            <label for="alumniEmail" class="form-label required">Email</label>
+                            <input type="email" class="form-control" id="alumniEmail" name="alumniEmail"
+                                placeholder="example@gmail.com" required />
+                        </div>
+
+                        <!--Entry year to NYP-->
+                        <div class="mb-3">
+                            <label for="entryYear" class="form-label required">Entry year to NYP</label>
+                            <input class="form-control" id="entryYear" name="entryYear" type="text"
+                                placeholder="e.g. 2018" required />
+                        </div>
+
+                        <!--Exit year to NYP-->
+                        <div class="mb-3">
+                            <label for="exitYear" class="form-label required">Exit year from NYP </label>
+                            <input class="form-control" id="exitYear" name="exitYear" type="text"
+                                placeholder="e.g. 2021" required />
+                        </div>
+
+                        <!--Phone Number-->
+                        <div class="mb-3">
+                            <label for="phone" class="form-label required">Phone Number</label>
+                            <input class="form-control" id="phone" name="phone" type="text" placeholder="e.g. 91234567"
+                                required />
+                        </div>
+
+                        <!--Experience in which instrument-->
+                        <div class="mb-3">
+                            <label class="form-label d-block required">Experience in which instrument? </label>
+                            <div class="row row-cols-2 row-cols-sm-3 g-2">
+                                <div class="form-check col">
+                                    <input class="form-check-input" type="radio" name="alumniInstrument"
+                                        id="alumniWoodwinds" value="woodwinds" required />
+                                    <label class="form-check-label" for="alumniWoodwinds">Woodwinds</label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" type="radio" name="alumniInstrument"
+                                        id="alumniBrass" value="brass" required />
+                                    <label class="form-check-label" for="alumniBrass">Brass</label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" type="radio" name="alumniInstrument"
+                                        id="alumniStrings" value="strings" required />
+                                    <label class="form-check-label" for="alumniStrings">Strings</label>
+                                </div>
+                                <div class="form-check col">
+                                    <input class="form-check-input" type="radio" name="alumniInstrument"
+                                        id="alumniPercussion" value="percussion" required />
+                                    <label class="form-check-label" for="alumniPercussion">Percussion</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Submit button-->
+                        <div class="d-flex justify-content-center my-4">
                             <button type="submit" class="btn btn-primary w-100">Submit</button>
                         </div>
 
@@ -215,38 +346,34 @@
         </div>
     </section>
 
-    <!--Feedback Form-->
-    <section class="text-center pt-5" id="feedback">
+    <!-- Feedback Form -->
+    <section class="text-center pt-5 pb-5" id="feedback" style="display: none;">
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8">
-                    <h4>Feedback Form</h4>
-                    <h6 class="mb-1">All details will be kept private and confidential,</h6>
-                    <h6 class="mb-4">and only shared with the necessary staff and people.</h6>
-
                     <form id="feedbackForm" class="text-start">
                         <!--Feedback Type-->
                         <div class="mb-3">
-                            <label class="form-label d-block required">Feedback Type  </label>
+                            <label class="form-label d-block required">Feedback Type</label>
                             <div class="row row-cols-2 row-cols-sm-3 g-2">
                                 <div class="form-check col">
                                     <input class="form-check-input" type="radio" name="feedbackType" id="Complaint"
-                                        value="Complaint" required>
+                                        value="Complaint" required />
                                     <label class="form-check-label" for="Complaint">Complaint</label>
                                 </div>
                                 <div class="form-check col">
                                     <input class="form-check-input" type="radio" name="feedbackType" id="Compliment"
-                                        value="Compliment" required>
+                                        value="Compliment" required />
                                     <label class="form-check-label" for="Compliment">Compliment</label>
                                 </div>
                                 <div class="form-check col">
                                     <input class="form-check-input" type="radio" name="feedbackType" id="Suggestion"
-                                        value="Suggestion" required>
+                                        value="Suggestion" required />
                                     <label class="form-check-label" for="Suggestion">Suggestion</label>
                                 </div>
                                 <div class="form-check col">
                                     <input class="form-check-input" type="radio" name="feedbackType" id="Enquiry"
-                                        value="Enquiry" required>
+                                        value="Enquiry" required />
                                     <label class="form-check-label" for="Enquiry">Enquiry</label>
                                 </div>
                             </div>
@@ -254,57 +381,58 @@
 
                         <!--Profile Type-->
                         <div class="mb-3">
-                            <label class="form-label d-block required">Profile Type  </label>
+                            <label class="form-label d-block required">Profile Type</label>
                             <div class="row row-cols-2 row-cols-sm-3 g-2">
                                 <div class="form-check col">
                                     <input class="form-check-input" type="radio" name="profileType"
-                                        id="currentNYPSOmember" value="currentNYPSOmember" required>
+                                        id="currentNYPSOmember" value="currentNYPSOmember" required />
                                     <label class="form-check-label" for="currentNYPSOmember">Current NYPSO
                                         Member</label>
                                 </div>
                                 <div class="form-check col">
                                     <input class="form-check-input" type="radio" name="profileType" id="Student"
-                                        value="Student" required>
+                                        value="Student" required />
                                     <label class="form-check-label" for="Student">Student</label>
                                 </div>
                                 <div class="form-check col">
                                     <input class="form-check-input" type="radio" name="profileType"
-                                        id="prospectiveStudent" value="prospectiveStudent" required>
+                                        id="prospectiveStudent" value="prospectiveStudent" required />
                                     <label class="form-check-label" for="prospectiveStudent">Prospective Student</label>
                                 </div>
                                 <div class="form-check col">
                                     <input class="form-check-input" type="radio" name="profileType" id="visitor"
-                                        value="visitor" required>
+                                        value="visitor" required />
                                     <label class="form-check-label" for="visitor">Visitor</label>
                                 </div>
                                 <div class="form-check col">
                                     <input class="form-check-input" type="radio" name="profileType" id="staff"
-                                        value="staff" required>
+                                        value="staff" required />
                                     <label class="form-check-label" for="staff">Staff</label>
                                 </div>
                             </div>
                         </div>
 
-                        <!--Message-->
-                        <div class="mb-3">
-                            <label for="msg" class="form-label required">Message  </label>
-                            <textarea class="form-control" id="msg" name="msg" rows="4" required
-                                placeholder="Please be as specific as possible"></textarea>
-                        </div>
-
                         <!--Name-->
                         <div class="mb-3">
-                            <label for="feedbackName" class="form-label required">Name  </label>
+                            <label for="feedbackName" class="form-label required">Name</label>
                             <input class="form-control" id="feedbackName" name="feedbackName" type="text" required
-                                placeholder="Enter your name">
+                                placeholder="Enter your name" />
                         </div>
 
                         <!--Email-->
                         <div class="mb-3">
-                            <label for="feedbackEmail" class="form-label required">Email  </label>
+                            <label for="feedbackEmail" class="form-label required">Email</label>
                             <input type="email" class="form-control" id="feedbackEmail" name="feedbackEmail"
-                                placeholder="yourname@example.com" required>
+                                placeholder="yourname@gmail.com" required />
                         </div>
+
+                        <!--Message-->
+                        <div class="mb-3">
+                            <label for="msg" class="form-label required">Message</label>
+                            <textarea class="form-control" id="msg" name="msg" rows="4" required
+                                placeholder="Please be as specific as possible"></textarea>
+                        </div>
+
 
                         <!--Submit button-->
                         <div class="d-flex justify-content-center mt-4 mb-5">
@@ -313,9 +441,8 @@
 
                         <!--Thank you message-->
                         <h6 class="text-center" style="display: none;">
-                            Thank you for filling in the form. All information will be
-                            kept private and confidential and will only be shared with
-                            the necessary people.
+                            Thank you for filling in the form. All information will be kept private and confidential and
+                            will only be shared with the necessary people.
                         </h6>
                     </form>
                 </div>

@@ -81,20 +81,13 @@
                         <ul class="dropdown-menu" aria-labelledby="alumniDropdown">
                             <li><a class="dropdown-item" href="alumni.html#aa">Alumni Association</a></li>
                             <li><a class="dropdown-item" href="alumni.html#events">Events</a></li>
-                            <li><a class="dropdown-item" href="alumni.html#join">Join Us!</a></li>
                         </ul>
                     </li>
 
                     <!-- Contact -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="contact.html">
-                            Contact Us
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="contactDropdown">
-                            <li><a class="dropdown-item" href="contact.html#signup">Sign Up Form</a></li>
-                            <li><a class="dropdown-item" href="contact.html#feedback">Feedback Form</a></li>
-                        </ul>
-                    </li>
+                    <a class="nav-link " href="contact.html">
+                        Contact Us
+                    </a>
                 </ul>
             </div>
         </div>
@@ -249,133 +242,6 @@
             </div>
         </div>
     </div>
-
-
-    <!--Alumni Join Us-->
-    <section class="projects-section text-center pt-5 pb-5" id="join">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-lg-8">
-                    <h4>Interested to join us?</h4>
-                    <h6 class="mt-2 mb-4">Just fill out the form below with your details and we'll be in touch</h6>
-
-                    <form id="alumniForm" class="text-start">
-                        <!--Salutation-->
-                        <div class="mb-3">
-                            <label class="form-label d-block required">Salutation </label>
-                            <div class="row row-cols-2 row-cols-sm-3 g-2">
-                                <div class="form-check col">
-                                    <input class="form-check-input" type="radio" name="salutation" id="miss"
-                                        value="Miss" required>
-                                    <label class="form-check-label" for="miss">Miss</label>
-                                </div>
-                                <div class="form-check col">
-                                    <input class="form-check-input" type="radio" name="salutation" id="ms" value="Ms"
-                                        required>
-                                    <label class="form-check-label" for="ms">Ms</label>
-                                </div>
-                                <div class="form-check col">
-                                    <input class="form-check-input" type="radio" name="salutation" id="mrs" value="Mrs"
-                                        required>
-                                    <label class="form-check-label" for="mrs">Mrs</label>
-                                </div>
-                                <div class="form-check col">
-                                    <input class="form-check-input" type="radio" name="salutation" id="mdm" value="Mdm"
-                                        required>
-                                    <label class="form-check-label" for="mdm">Mdm</label>
-                                </div>
-                                <div class="form-check col">
-                                    <input class="form-check-input" type="radio" name="salutation" id="mr" value="Mr"
-                                        required>
-                                    <label class="form-check-label" for="mr">Mr</label>
-                                </div>
-                                <div class="form-check col">
-                                    <input class="form-check-input" type="radio" name="salutation" id="dr" value="Dr"
-                                        required>
-                                    <label class="form-check-label" for="dr">Dr</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Name-->
-                        <div class="mb-3">
-                            <label for="alumniName" class="form-label required">Name</label>
-                            <input class="form-control" id="alumniName" name="AlumniName" type="text"
-                                placeholder="Enter your full name" required>
-                        </div>
-
-                        <!--Email Address-->
-                        <div class="mb-3">
-                            <label for="alumniEmail" class="form-label required">Email</label>
-                            <input type="email" class="form-control" id="alumniEmail" name="alumniEmail"
-                                placeholder="adminNum@mymail.nyp.edu.sg" required>
-                        </div>
-
-                        <!--Entry year to NYP-->
-                        <div class="mb-3">
-                            <label for="entryYear" class="form-label required">Entry year to NYP</label>
-                            <input class="form-control" id="entryYear" name="entryYear" type="text"
-                                placeholder="e.g. 2018" required>
-                        </div>
-
-                        <!--Exit year to NYP-->
-                        <div class="mb-3">
-                            <label for="exitYear" class="form-label required">Exit year from NYP </label>
-                            <input class="form-control" id="exitYear" name="exitYear" type="text"
-                                placeholder="e.g. 2021" required>
-                        </div>
-
-
-
-                        <!--Phone Number-->
-                        <div class="mb-3">
-                            <label for="phone" class="form-label required">Phone Number</label>
-                            <input class="form-control" id="phone" name="phone" type="text" placeholder="e.g. 91234567"
-                                required>
-                        </div>
-
-                        <!--Experience in which instrument-->
-                        <div class="mb-3">
-                            <label class="form-label d-block required">Experience in which instrument? </label>
-                            <div class="row row-cols-2 row-cols-sm-3 g-2">
-                                <div class="form-check col">
-                                    <input class="form-check-input" type="radio" name="alumniInstrument"
-                                        id="alumniWoodwinds" value="woodwinds" required>
-                                    <label class="form-check-label" for="alumniWoodwinds">Woodwinds</label>
-                                </div>
-                                <div class="form-check col">
-                                    <input class="form-check-input" type="radio" name="alumniInstrument"
-                                        id="alumniBrass" value="brass" required>
-                                    <label class="form-check-label" for="alumniBrass">Brass</label>
-                                </div>
-                                <div class="form-check col">
-                                    <input class="form-check-input" type="radio" name="alumniInstrument"
-                                        id="alumniStrings" value="strings" required>
-                                    <label class="form-check-label" for="alumniStrings">Strings</label>
-                                </div>
-                                <div class="form-check col">
-                                    <input class="form-check-input" type="radio" name="alumniInstrument"
-                                        id="alumniPercussion" value="percussion" required>
-                                    <label class="form-check-label" for="alumniPercussion">Percussion</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Submit button-->
-                        <div class="d-flex justify-content-center my-4">
-                            <button type="submit" class="btn btn-primary w-100">Submit</button>
-                        </div>
-
-                        <!--Thank you message-->
-                        <h6 class="text-center" style="display: none;">Thank you for filling in the form. We will get
-                            back to you shortly!</h6>
-                    </form>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
 
     <!-- Footer-->
     <footer class="footer bg-black small text-center text-white-50 py-4">
